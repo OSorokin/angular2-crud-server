@@ -38,9 +38,6 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
-services/
-/.idea/
-!/.idea/
 .idea/jsLibraryMappings.xml
 .idea/runConfigurations/
 .idea/workspace.xml
