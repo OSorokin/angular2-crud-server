@@ -40,3 +40,7 @@ testem.log
 Thumbs.db
 services/
 /.idea/
+!/.idea/
+.idea/jsLibraryMappings.xml
+.idea/runConfigurations/
+.idea/workspace.xml
