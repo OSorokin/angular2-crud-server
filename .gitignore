@@ -38,6 +38,5 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
-.idea/jsLibraryMappings.xml
-.idea/runConfigurations/
-.idea/workspace.xml
+/.gitignore
+/.idea/
