@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 var pgp = require('pg-promise')();
-var cn = "postgres://postgres:admin@localhost:5432/postgres";
+var cn = "postgres://postgres:postgres@localhost:5432/postgres";
 var db = pgp(cn);
 
 /* GET users listing. */
@@ -61,7 +61,7 @@ router.put('/:id', function(req, res, next) {
     var data = req.body;
     console.log(data);
 
-    db.one('UPDATE users SET (${this~})=(  ${id}, ${name}, ${surname}, ${birth_date}, ${gender}, ${email}, ${position}, ${project} ) WHERE id=${id} RETURNING *', data )
+    db.one('UPDATE users SET (${this~})=(  ${name}, ${surname}, ${birth_date}, ${gender}, ${email}, ${position}, ${project}, ${id} ) WHERE id=${id} RETURNING *', data )
         .then(function (user) {
             return res.json({data: user});
         })
@@ -70,7 +70,6 @@ router.put('/:id', function(req, res, next) {
             return res.status(500).json({success: false, data: error});
         });
 
-    //res.send('PUt user');
 });
 
 router.delete('/:id', function(req, res, next) {
