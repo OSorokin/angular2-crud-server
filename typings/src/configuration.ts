@@ -38,6 +38,7 @@ export namespace TTS4T_Configuration {
   export interface EnvConfig {
     server: ServerConfig;
     database: DatabaseConfig;
+    log: LogConfig;
   }
 
   export interface FullConfiguration {

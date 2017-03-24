@@ -1,10 +1,10 @@
-const logger = require('../logger/logger').getLogger(__filename);
+const logger = require('../app/logger/logger').getLogger(__filename);
 
 import * as yargs from 'yargs';
 import * as util from 'util';
+import config from '../app/configuration';
+import DbMigrations from '../app/db/DbMigrations';
 
-import config from '../configuration';
-import DbMigrations from '../db/DbMigrations';
 
 class MigrationsExecutor {
 

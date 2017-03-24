@@ -1,5 +1,5 @@
 import * as express from 'express';
-import {User} from '../../models/index';
+import { User } from '../../app/models/index';
 
 export namespace TTS4T_HTTP {
 

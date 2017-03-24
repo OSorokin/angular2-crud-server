@@ -1,6 +1,5 @@
 import { IProjectDto } from './IProjectDto';
 import { IPositionDto } from './IPositionDto';
-import { Gender } from '../../../models/Gender';
 
 export enum UserGenderDto {
   MALE = 0,
@@ -12,7 +11,6 @@ export interface IUserDto {
   name?: string;
   surname?: string;
   birth_date?: string;
-  gender?: Gender;
   email?: string;
   position?: IPositionDto;
   project?: IProjectDto;
