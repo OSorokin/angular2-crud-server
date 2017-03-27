@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="tts4trivium@localhost" uuid="cf73891a-e521-4301-9497-462e429ffdf0">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/tts4trivium</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="users-crud-app-migrations-from-models@localhost" uuid="afeebcc2-3596-447b-917f-03653d868515">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/users-crud-app-migrations-from-models</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="users-crud-app@localhost" uuid="1808c809-c1e5-473d-9aae-ac40fcf025b6">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/users-crud-app</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="users-crud-app-migrations-from-changelogspostgres@localhost" uuid="203bb270-6249-4cc6-baf6-edd7fef94c21">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/users-crud-app-migrations-from-changelogs</jdbc-url>
+    </data-source>
+  </component>
+</project>

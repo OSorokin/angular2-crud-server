@@ -8,22 +8,23 @@ exports.paths = {
   src: {
     bin: 'bin',
     app: 'app',
-    typings: '../typings',
-    common: '../common',
-    commonMain: '../common/main',
-    migrations: '../migrations',
-    packageJson: '../package.json'
+    typings: 'typings',
+    common: 'common',
+    commonMain: 'common/main',
+    migrations: 'migrations',
+    packageJson: 'package.json'
   },
-  awsCodeDeploy: 'aws-code-deploy',
-  folderToContainBundleFiles: '../aws-distribution/files',
-  folderToContainBundle: '../aws-distribution'
+  codeDeploy: 'code-deploy',
+  folderToContainBundleFiles: './distribution/files',
+  folderToContainBundle: './distribution'
 };
 
 var EXTENSION_ZIP = 'zip';
 
 exports.bundle = {
   paths: {
-    awsCodeDeploy: '.',
+    codeDeploy: '.',
+    server: 'server',
     common: 'common'
   },
   constructRevisionName: _constructRevisionName,

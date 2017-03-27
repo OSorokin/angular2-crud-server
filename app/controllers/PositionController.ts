@@ -33,5 +33,4 @@ export default class PositionController extends BaseController {
     return PositionService.update( posId, pos );
   }
 
-
 }
