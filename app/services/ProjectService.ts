@@ -61,6 +61,27 @@ class ProjectService extends AbstractService {
     return ProjectMapper.mapToDto(project);
   }
 
+  public async delete( projectId: number, projectDto: ProjectDto): Promise<ProjectDto> {
+
+    const project: Project.Instance = await connection.transaction(async(t: Sequelize.Transaction) => {
+      let project = await Project.Model.findById(projectId, {transaction: t});
+
+      if (project == null || project.id != projectId) {
+        throw new NotFound('Position not found');
+      }
+
+      project = ProjectMapper.mapToInstance(project, projectDto);
+
+      return await project.destroy({transaction: t}).then( (r) => {
+        console.log(r);
+        return r;
+      });
+
+    });
+
+    return ProjectMapper.mapToDto(project);
+  }
+
 }
 
 export default new ProjectService();

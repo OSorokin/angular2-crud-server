@@ -28,9 +28,11 @@ export default class Application {
     logger.info(`Application starting. Environment mode is: ${config.getMode()}`);
 
     await Context.init();
+
     const webServer = await WebServer.createWebServer();
 
     const port = Application.normalizePort(config.env().server.port);
+
     webServer.set('port', port);
 
     const server = http.createServer(webServer);

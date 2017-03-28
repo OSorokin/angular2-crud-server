@@ -9,7 +9,7 @@
     "migrations:validate-scheme": "node ./bin/Migrations.js --action=validate-scheme",
     "migrations:apply-and-validate": "npm run migrations:apply-changelogs && npm run migrations:validate-scheme",
     "dev:compile": "npm install --only=dev && npm install --only=prod && gulp build:clean-and-compile",
-    "dev:idea-debuggable-run": "node $NODE_DEBUG_OPTION ./Application.js",
+    "dev:idea-debuggable-run": "node $NODE_DEBUG_OPTION ./bin/Application.js",
     "deployment:create-bundle": "gulp bundle:zip",
     "deployment:deploy": "gulp deploy",
     "dev:install-migrate-and-run": "npm install && npm run migrations:apply-and-validate && npm run dev:idea-debuggable-run",

@@ -15,7 +15,7 @@ class UserService extends AbstractService {
 
   public async findOne(userId: number): Promise<UserDto> {
 
-    const user: User.Instance = await User.Model.scope().findById(userId);
+    const user: User.Instance = await User.Model.scope([User.Scopes.INCLUDE_POSITION,User.Scopes.INCLUDE_PROJECT]).findById(userId);
 
     if (user == null) {
       throw new NotFound('User not found');
@@ -26,7 +26,7 @@ class UserService extends AbstractService {
 
   public async findAll(): Promise<UserDto[]> {
 
-    const users = await User.Model.findAll();
+    const users = await User.Model.scope([User.Scopes.INCLUDE_POSITION,User.Scopes.INCLUDE_PROJECT]).findAll();
 
     return _.map(users, (u: User.Instance) => {
       return UserMapper.mapToDto(u);
@@ -45,9 +45,6 @@ class UserService extends AbstractService {
       newUser.position = position;
       return newUser;
     });
-    let findOneById = User.Model
-      .scope(User.Scopes.INCLUDE_POSITION)
-      .findOneById(1);
     return UserMapper.mapToDto(user);
   }
 
@@ -70,6 +67,26 @@ class UserService extends AbstractService {
       user.position = position;
 
       return await user.save({transaction: t});
+    });
+
+    return UserMapper.mapToDto(user);
+  }
+
+  public async delete( userId: number, userDto: UserDto): Promise<UserDto> {
+
+    const user: User.Instance = await connection.transaction(async(t: Sequelize.Transaction) => {
+      let user = await User.Model.findById(userId, {transaction: t});
+
+      if (user == null || user.id != userId) {
+        throw new NotFound('User not found');
+      }
+
+      user = UserMapper.mapToInstance(user, userDto);
+
+      return await user.destroy({transaction: t}).then( (r) => {
+        console.log(r);
+        return r;
+      });
     });
 
     return UserMapper.mapToDto(user);

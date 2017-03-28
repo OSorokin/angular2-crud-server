@@ -9,7 +9,6 @@ namespace Position {
   }
 
   export interface Instance extends Sequelize.Instance<Attributes>, Attributes {
-    user?: User.Instance,
   }
 
   export interface ClassMethods extends TTS4T_ORM.ClassMethods {
@@ -27,8 +26,7 @@ namespace Position {
     return {
       associate: function (models) {
         Model.belongsTo(models.User.Model, {
-          as: 'user',
-          foreignKey: 'user_id'
+          as: 'user'
         });
       },
       findOneById: function (id): Promise<Position.Instance> {

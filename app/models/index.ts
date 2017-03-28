@@ -7,6 +7,7 @@ export import Position = require('./Position');
 export import Project = require('./Project');
 
 export function initializeSequelizeModels(connection: Sequelize.Sequelize): void {
+
   const models = module.exports;
   const modelsList: TTS4T_ORM.Model<any, any>[] = [];
 

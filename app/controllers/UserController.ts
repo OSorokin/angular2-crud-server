@@ -1,5 +1,5 @@
 import BaseController from './BaseController';
-import { JsonController, Get, Req, Post, Body, Put, Param } from 'routing-controllers/index';
+import { JsonController, Get, Req, Post, Delete, Body, Put, Param } from 'routing-controllers/index';
 import UserService from '../services/UserService';
 import { UserDto } from '../dto/UserDto';
 import { TTS4T_HTTP } from '../../typings';
@@ -33,6 +33,12 @@ export default class UserController extends BaseController {
   async updateUser(@Param('id') userId: number, @Body() user: UserDto): Promise<UserDto> {
     await this.validate(user);
     return UserService.update( userId, user,);
+  }
+
+  @Delete(Locations.User.DELETE)
+  async deleteUser(@Param('id') userId: number, @Body() user: UserDto): Promise<UserDto> {
+    await this.validate(user);
+    return UserService.delete( userId, user );
   }
 
 }

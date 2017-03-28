@@ -14,8 +14,6 @@ namespace User {
   }
 
   export interface Instance extends Sequelize.Instance<Attributes>, Attributes {
-    position?: Position.Instance,
-    project?: Project.Instance
 
     getProject: Sequelize.HasOneGetAssociationMixin<Project.Instance>;
     setProject: Sequelize.HasOneSetAssociationMixin<Project.Instance, number>;
@@ -36,6 +34,8 @@ namespace User {
     email?: string;
     positionId?: number;
     projectId?: number;
+    position?: Position.Instance,
+    project?: Project.Instance
   }
 
   export let Model: Class;
@@ -44,12 +44,10 @@ namespace User {
     return {
       associate: function (models) {
         Model.belongsTo(models.Position.Model, {
-          as: 'position',
-          foreignKey: 'position_id'
+          as: 'position'
         });
         Model.belongsTo(models.Project.Model, {
-          as: 'project',
-          foreignKey: 'project_id'
+          as: 'project'
         });
       },
       addScopes: function (models) {
@@ -58,7 +56,7 @@ namespace User {
             include: [
               {
                 model: models.Position.Model,
-                as: 'position',
+                as: 'position'
               }
             ]
           }
@@ -68,7 +66,7 @@ namespace User {
             include: [
               {
                 model: models.Project.Model,
-                as: 'project',
+                as: 'project'
               }
             ]
           }
@@ -116,7 +114,7 @@ namespace User {
         type: Sequelize.BIGINT,
         field: 'project_id'
       },
-    }, {
+    },{
       underscored: true,
       freezeTableName: true,
       instanceMethods: {},

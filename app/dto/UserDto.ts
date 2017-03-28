@@ -3,7 +3,7 @@ import { IProjectDto } from '../../common/main/dto/IProjectDto';
 import { IPositionDto } from '../../common/main/dto/IPositionDto';
 
 export class UserDto implements IUserDto {
-  id: number;
+  id?: number;
 
   name?: string;
 
@@ -13,7 +13,7 @@ export class UserDto implements IUserDto {
 
   email?: string;
 
-  project: IProjectDto;
+  project?: IProjectDto;
 
-  position: IPositionDto;
+  position?: IPositionDto;
 }

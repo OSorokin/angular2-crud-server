@@ -61,6 +61,26 @@ class PositionService extends AbstractService {
     return PositionMapper.mapToDto(pos);
   }
 
+  public async delete( positionId: number, positionDto: PositionDto): Promise<PositionDto> {
+
+    const position: Position.Instance = await connection.transaction(async(t: Sequelize.Transaction) => {
+      let position = await Position.Model.findById(positionId, {transaction: t});
+
+      if (position == null || position.id != positionId) {
+        throw new NotFound('Position not found');
+      }
+
+      position = PositionMapper.mapToInstance(position, positionDto);
+
+      return await position.destroy({transaction: t}).then( (r) => {
+        console.log(r);
+        return r;
+      });
+    });
+
+    return PositionMapper.mapToDto(position);
+  }
+
 }
 
 export default new PositionService();

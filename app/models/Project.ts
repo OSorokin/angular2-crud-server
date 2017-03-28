@@ -9,13 +9,11 @@ namespace Project {
   }
 
   export interface Instance extends Sequelize.Instance<Attributes>, Attributes {
-    user?: User.Instance;
   }
 
   export interface ClassMethods extends TTS4T_ORM.ClassMethods {
     findOneById(id: number): Promise<User.Instance>
   }
-
 
   export interface Attributes {
     id?: number;
@@ -29,7 +27,6 @@ namespace Project {
       associate: function (models) {
         Model.belongsTo(models.User.Model, {
           as: 'user',
-          foreignKey: 'user_id'
         });
       },
       findOneById: function (id): Promise<Project.Instance> {
