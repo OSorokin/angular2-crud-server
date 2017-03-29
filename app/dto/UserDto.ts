@@ -1,19 +1,20 @@
-import { IUserDto } from '../../common/index';
-import { IProjectDto } from '../../common/main/dto/IProjectDto';
-import { IPositionDto } from '../../common/main/dto/IPositionDto';
+import { IUserDto, IProjectDto, IPositionDto } from '../../common/index';
+import { UserGenderDto } from '../../common/main/dto/IUserDto';
 
 export class UserDto implements IUserDto {
-  id?: number;
+  id: number;
 
-  name?: string;
+  name: string;
 
-  surname?: string;
+  surname: string;
 
-  birth_date?: string;
+  gender: UserGenderDto;
 
-  email?: string;
+  birth_date: string;
 
-  project?: IProjectDto;
+  email: string;
 
-  position?: IPositionDto;
+  project: IProjectDto;
+
+  position: IPositionDto;
 }

@@ -10,6 +10,7 @@ export interface IUserDto {
   id?: number;
   name?: string;
   surname?: string;
+  gender?: UserGenderDto;
   birth_date?: string;
   email?: string;
   position?: IPositionDto;

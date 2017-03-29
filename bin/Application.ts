@@ -3,9 +3,8 @@ import * as http from 'http';
 import * as util from 'util';
 import config from '../app/configuration';
 import Context from '../app/Context';
-import { getLogger } from '../app/logger/logger';
 import WebServer from '../app/WebServer';
-const logger = getLogger(__filename);
+const logger = require('../app/logger/logger').getLogger(__filename);
 
 export default class Application {
 

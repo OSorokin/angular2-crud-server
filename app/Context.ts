@@ -1,7 +1,7 @@
 import connection from './db/connection';
 import { initializeSequelizeModels } from './models';
-import { getLogger } from './logger/logger';
-const logger = getLogger(__filename);
+
+const logger = require('../app/logger/logger').getLogger(__filename);
 
 export default class Context {
 

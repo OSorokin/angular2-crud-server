@@ -1,6 +1,7 @@
 import * as Sequelize from 'sequelize';
 import { TTS4T_ORM } from '../../typings';
 import { Position, Project } from './index';
+import { UserGenderDto } from '../../common/main/dto/IUserDto';
 
 namespace User {
 
@@ -30,6 +31,7 @@ namespace User {
     id?: number;
     name?: string;
     surname?: string;
+    gender?: UserGenderDto;
     birth_date?: string;
     email?: string;
     positionId?: number;
@@ -97,6 +99,10 @@ namespace User {
       surname: {
         type: Sequelize.STRING(250),
         field: 'surname',
+      },
+      gender: {
+        type: Sequelize.INTEGER,
+        field: 'gender',
       },
       birth_date: {
         type: Sequelize.STRING(250),

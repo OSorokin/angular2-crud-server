@@ -6,9 +6,7 @@ import * as compression from 'compression';
 import * as bodyParser from 'body-parser';
 import { useExpressServer } from 'routing-controllers';
 import * as Morgan from './logger/morgan-logger';
-import { getLogger } from './logger/logger';
 import { TTS4T_HTTP } from '../typings/src/http';
-const logger = getLogger(__filename);
 
 export default class WebServer {
 

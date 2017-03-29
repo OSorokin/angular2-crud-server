@@ -1,4 +1,33 @@
 # Created by .ignore support plugin (hsz.mobi)
-Будет удалено .gitignore
-Будет удалено .idea/
-Будет удалено angular2-crud-server.iml
+# dependencies
+/**/node_modules
+
+# IDEs and editors
+
+/.idea
+/.vscode
+.project
+.classpath
+*.launch
+.settings/
+/**/*.iml
+
+#app files
+
+/app/**/*.js
+/app/**/*.map
+
+/bin/**.js
+/bin/**.js.map
+
+/common/**/*.js
+/common/**/*.map
+
+/typings/**/*.js
+/typings/**/**.js.map
+
+/aws-code-deploy/
+/distribution/
+
+/**.log.*
+/**.log

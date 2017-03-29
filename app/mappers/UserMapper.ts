@@ -4,17 +4,6 @@ import { ProjectMapper } from './ProjectMapper';
 import { PositionMapper } from './PositionMapper';
 
 export class UserMapper {
-/*
-  private static GENDER_MAPPER_TO_DTO = new Map<Gender, Gender>([
-    [Gender.MALE, Gender.MALE],
-    [Gender.FEMALE, Gender.FEMALE]
-  ]);
-
-  private static GENDER_MAPPER_TO_INSTANCE = new Map<Gender, Gender>([
-    [Gender.MALE, Gender.MALE],
-    [Gender.FEMALE, Gender.FEMALE]
-  ]);
-*/
 
   static mapToDto(user: User.Instance): UserDto {
 
@@ -22,6 +11,7 @@ export class UserMapper {
     dto.id = user.id;
     dto.name = user.name;
     dto.surname = user.surname;
+    dto.gender = user.gender;
     dto.birth_date = user.birth_date;
     dto.email = user.email;
     dto.project = ProjectMapper.mapToDto(user.project);
@@ -32,6 +22,7 @@ export class UserMapper {
   static mapToInstance(instance: User.Instance, dto: UserDto): User.Instance {
     instance.name = dto.name;
     instance.surname = dto.surname;
+    instance.gender = dto.gender;
     instance.birth_date = dto.birth_date;
     instance.email = dto.email;
     instance.projectId = dto.project.id;
