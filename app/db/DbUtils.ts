@@ -1,14 +1,14 @@
 import * as winston from 'winston';
 import * as _ from 'lodash';
 import * as Sequelize from 'sequelize';
-import { TTS4T_Configuration } from '../../typings';
+import { USERS_CRUD_APP_Configuration } from '../../typings';
 
 const pg = require('pg');
 pg.defaults.parseInt8 = true;
 
 require('pg-parse-float')(pg);
 
-export function initializeConnection(logger: winston.LoggerInstance, config: TTS4T_Configuration.DatabaseConfig): Sequelize.Sequelize {
+export function initializeConnection(logger: winston.LoggerInstance, config: USERS_CRUD_APP_Configuration.DatabaseConfig): Sequelize.Sequelize {
 
   // logging option is declared in current file because if it does in configuration files then it leads to
   // circular dependencies issues

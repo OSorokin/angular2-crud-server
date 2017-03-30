@@ -1,10 +1,10 @@
-import { TTS4T_Configuration } from '../../typings';
+import { USERS_CRUD_APP_Configuration } from '../../typings';
 import { MODE } from './env';
 import ConfigMigrations from './config-migrations';
 import ConfigLocal from './config-local';
 
-const config: TTS4T_Configuration.FullConfiguration = {
-  env: function (): TTS4T_Configuration.EnvConfig {
+const config: USERS_CRUD_APP_Configuration.FullConfiguration = {
+  env: function (): USERS_CRUD_APP_Configuration.EnvConfig {
     if (process.env.mode == null) {
       console.error('Error! process.env.mode not specified!');
       process.exit(1);

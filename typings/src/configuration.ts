@@ -1,6 +1,6 @@
 import * as Sequelize from 'sequelize';
 
-export namespace TTS4T_Configuration {
+export namespace USERS_CRUD_APP_Configuration {
 
   export interface DatabaseConfig {
     temporaryDatabaseName?: string;

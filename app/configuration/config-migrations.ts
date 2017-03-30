@@ -1,17 +1,11 @@
-import { TTS4T_Configuration } from '../../typings';
-import * as path from 'path';
+import { USERS_CRUD_APP_Configuration } from '../../typings';
 
-const SERVER: TTS4T_Configuration.ServerConfig = {
+const SERVER: USERS_CRUD_APP_Configuration.ServerConfig = {
   port: '3000',
   url: 'http://localhost:3000'
 };
 
-const FILE_SYSTEM: TTS4T_Configuration.FileSystemConfig = {
-  superAdminsFile: path.join(__dirname, '..', '..', 'superadmin.json'),
-  webappStaticFolder: path.join(__dirname, '..', '..', '..', 'webapp', 'dist')
-};
-
-const DATABASE: TTS4T_Configuration.DatabaseConfig = {
+const DATABASE: USERS_CRUD_APP_Configuration.DatabaseConfig = {
   temporaryDatabaseName: 'users-crud-app-migrations-from-changelogs',
   name: 'users-crud-app-migrations-from-models',
   username: 'postgres',
@@ -20,7 +14,6 @@ const DATABASE: TTS4T_Configuration.DatabaseConfig = {
     host: 'localhost',
     port: 5432,
     dialect: 'postgres',
-
     pool: {
       max: 3,
       min: 1,
@@ -29,9 +22,8 @@ const DATABASE: TTS4T_Configuration.DatabaseConfig = {
   }
 };
 
-
 //noinspection TypeScriptValidateTypes
-const LOG: TTS4T_Configuration.LogConfig = {
+const LOG: USERS_CRUD_APP_Configuration.LogConfig = {
   transports: [{
     type: 'console',
     level: 'silly'
@@ -40,9 +32,8 @@ const LOG: TTS4T_Configuration.LogConfig = {
 
 
 
-export default <TTS4T_Configuration.EnvConfig> {
+export default <USERS_CRUD_APP_Configuration.EnvConfig> {
   server: SERVER,
   database: DATABASE,
-  log: LOG,
-  fileSystem: FILE_SYSTEM,
+  log: LOG
 };

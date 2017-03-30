@@ -3,7 +3,7 @@ import * as moment from 'moment';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as util from 'util';
-import { TTS4T_Configuration } from '../../typings';
+import { USERS_CRUD_APP_Configuration } from '../../typings';
 import config from '../configuration';
 require('winston-loggly-bulk');
 
@@ -37,7 +37,7 @@ export function getLogger(label: string): winston.LoggerInstance {
   });
 }
 
-function consoleTransport(label: string, level: TTS4T_Configuration.LogLevelType): winston.ConsoleTransportInstance {
+function consoleTransport(label: string, level: USERS_CRUD_APP_Configuration.LogLevelType): winston.ConsoleTransportInstance {
   return new (winston.transports.Console)({
     label: label,
     level: level,
@@ -62,7 +62,7 @@ function consoleTransport(label: string, level: TTS4T_Configuration.LogLevelType
   });
 }
 
-function logglyTransport(label: string, transport: TTS4T_Configuration.LogTransport): winston.ConsoleTransportInstance {
+function logglyTransport(label: string, transport: USERS_CRUD_APP_Configuration.LogTransport): winston.ConsoleTransportInstance {
   return new (winston.transports.Loggly)({
     token: transport.configuration.token,
     subdomain: transport.configuration.subdomain,

@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";;;;AAAA,iBAAc,qBAAqB,CAAC,EAAA;AACpC,iBAAc,uBAAuB,CAAC,EAAA;AACtC,iBAAc,qBAAqB,CAAC,EAAA;AAEG"}
+{"version":3,"sources":["index.ts"],"names":[],"mappings":";;;;AAAA,iBAAc,qBAAqB,CAAC,EAAA;AACpC,iBAAc,qBAAqB,CAAC,EAAA;AAEG","file":"index.js","sourcesContent":["export * from './main/routes/index';\nexport * from './main/dto/IUserDto';\nexport * from './main/dto/IPositionDto';\nexport * from './main/dto/IProjectDto';"],"sourceRoot":""}

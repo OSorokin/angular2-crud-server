@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";;;;AACA,iBAAc,wBAAwB,CAAC,EAAA;AACvC,0BAAmC,uBAAuB,CAAC;AAAnD,wCAAmD"}
+{"version":3,"sources":["routes/index.ts"],"names":[],"mappings":";AAAA,0BAAmC,uBAAuB,CAAC;AAAnD,wCAAmD","file":"routes/index.js","sourcesContent":["export {default as Locations} from './endpoints/Locations';"],"sourceRoot":""}

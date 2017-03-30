@@ -9,7 +9,7 @@ import * as path from 'path';
 import * as xml2js from 'xml2js';
 import * as fs from 'fs';
 import * as util from 'util';
-import { TTS4T_Configuration } from '../../typings';
+import { USERS_CRUD_APP_Configuration } from '../../typings';
 import { initializeSequelizeModels } from '../models';
 import { initializeConnection } from './DbUtils';
 
@@ -29,12 +29,12 @@ export default class DbMigrations {
 
   private _temporaryDbToSynchronizeSchemeBySequelize;
 
-  private constructor(private _env: TTS4T_Configuration.EnvConfig,
+  private constructor(private _env: USERS_CRUD_APP_Configuration.EnvConfig,
                       private _appMode: string) {
     this._temporaryDbToSynchronizeSchemeBySequelize = this._env.database.temporaryDatabaseName;
   }
 
-  public static async initialize(configuration: TTS4T_Configuration.FullConfiguration): Promise<DbMigrations> {
+  public static async initialize(configuration: USERS_CRUD_APP_Configuration.FullConfiguration): Promise<DbMigrations> {
     logger.info(`Migrations logic initialized for mode: ${configuration.getMode()}`);
     return new DbMigrations(configuration.env(), configuration.getMode());
   }
@@ -83,7 +83,7 @@ export default class DbMigrations {
     await this.synchronizeSequelizeModels(specifiedSettings);
   }
 
-  private async synchronizeSequelizeModels(databaseConfig: TTS4T_Configuration.DatabaseConfig): Promise<void> {
+  private async synchronizeSequelizeModels(databaseConfig: USERS_CRUD_APP_Configuration.DatabaseConfig): Promise<void> {
     if (this._appMode != MODE.test) {
       const isConnectionToMainDB: boolean = this._env.database.name == databaseConfig.name;
       if (isConnectionToMainDB) {

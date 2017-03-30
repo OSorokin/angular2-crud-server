@@ -11,4 +11,5 @@ connection.authenticate().then(function () {
 });
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = connection;
+
 //# sourceMappingURL=connection.js.map

@@ -12,7 +12,7 @@ export default {
     GET_ALL: '/positions',
     GET_ONE: '/positions/:id',
     UPDATE: '/positions/:id',
-    DELETE: '/upositions/:id'
+    DELETE: '/positions/:id'
   },
   Project: {
     CREATE: '/projects',
